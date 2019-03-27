@@ -38,4 +38,5 @@ else
  find $scandir -iname '*.ico' | xargs file | grep 'PHP script' | awk -F: '{ print $1 }' | tee >> $logfile
 fi
  
-
+echo | tee >> $logfile
+echo Scan ended |tee >> $logfile

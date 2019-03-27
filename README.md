@@ -16,5 +16,7 @@ Logging is also configureable and will go to /tmp/wormcheck-{date}.txt
 
 
 Enjoy!
+
 Jasper Nuyens - jnuyens at linuxbe.com
+
 http://www.linuxbe.com

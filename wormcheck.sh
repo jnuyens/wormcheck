@@ -2,6 +2,12 @@
 #copyright Jasper Nuyens 2019
 #licensed under the GNU GPLv3 license as published on https:/www.GNU.org
 
+if [[ $(id -u) != 0 ]]
+then
+ echo Error: please run with sudo rights or as the root user to avoid file permission read errors
+ exit 2
+fi
+
 logfile=/tmp/wormcheck-$(date +"%Y-%m-%d-%H-%M").txt
 scandir=/var/www
 version=2019032701

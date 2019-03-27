@@ -16,7 +16,7 @@ echo Runs for a very long time.
 echo You can follow progress in another terminal window with: less $logfile
 
 echo | tee > $logfile
-echo Scanning for random lenght 8 char filenames - can have false positives | tee >> $logfile
+echo Scanning for random lenght 8 char filenames - manually verify if these are normal files - some viruses generate random filenames so look for those. | tee >> $logfile
 find $scandir -type f | egrep './[a-z]{8}\.php' | tee >> $logfile
 
 echo | tee >> $logfile

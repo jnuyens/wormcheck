@@ -30,6 +30,12 @@ rgrep '<?php /\*[0-9][0-9][0-9][0-9]\*/' $scandir | tee >> $logfile
 
 echo | tee >> $logfile
 echo Scanning for fake .ico files - probably no false positives |tee >> $logfile
+which locate 2> /dev/null
+if [[ $? = 0 ]]
+then
 locate .ico | xargs file | grep 'PHP script' | awk -F: '{ print $1 }' | tee >> $logfile
-
+else
+ find $scandir -iname '*.ico' | xargs file | grep 'PHP script' | awk -F: '{ print $1 }' | tee >> $logfile
+fi
+ 
 

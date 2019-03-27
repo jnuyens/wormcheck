@@ -12,6 +12,9 @@ logfile=/tmp/wormcheck-$(date +"%Y-%m-%d-%H-%M").txt
 scandir=/var/www
 version=2019032701
 
+echo Runs for a very long time.
+echo You can follow progress in another terminal window with: less $logfile
+
 echo | tee > $logfile
 echo Scanning for random lenght 8 char filenames - can have false positives | tee >> $logfile
 find $scandir -type f | egrep './[a-z]{8}\.php' | tee >> $logfile
